@@ -1,14 +1,20 @@
-const consecutiveSubstrings = require('../consecutive_substrings');
+// FIXED import path
+const consecutiveSubstrings = require("../consecutive_substrings");
 
-test('returns an empty array when the input string is empty', () => {
-  expect(consecutiveSubstrings('').length).toBe(0);
+test("handles 'abc'", () => {
+  expect(consecutiveSubstrings("abc")).toEqual(["a","ab","abc","b","bc","c"]);
 });
 
-test('returns an array containing one string when the input is one character', () => {
-  expect(consecutiveSubstrings('a')).toEqual(['a']);
+test("handles single character", () => {
+  expect(consecutiveSubstrings("a")).toEqual(["a"]);
 });
-    
-test('can handle many letters', () => {
-  expect(consecutiveSubstrings('ab')).toEqual(['a', 'ab', 'b']);
-  expect(consecutiveSubstrings('abc')).toEqual(['a', 'ab', 'abc', 'b', 'bc', 'c']);
+
+test("handles empty string", () => {
+  expect(consecutiveSubstrings("")).toEqual([]);
+});
+
+test("handles longer string", () => {
+  expect(consecutiveSubstrings("abcd")).toEqual([
+    "a","ab","abc","abcd","b","bc","bcd","c","cd","d"
+  ]);
 });

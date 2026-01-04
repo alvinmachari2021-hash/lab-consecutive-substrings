@@ -47,3 +47,13 @@ Output: ['a']
 1. `cd` into the javascript folder
 2. `npm i`
 3. `npm test`
+# Consecutive Substrings Lab
+
+## Problem Definition
+Given a string, return all consecutive substrings consisting of at least one character.  
+Example: `"abc"` → `["a","ab","abc","b","bc","c"]`.
+
+## Algorithm Choice
+We use **nested loops** to generate substrings. This ensures all consecutive substrings are captured in order.
+
+## Pseudocode
